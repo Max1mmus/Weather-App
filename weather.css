@@ -1,0 +1,152 @@
+body{
+    font-family: "Amatic SC", Arial, Helvetica, sans-serif;
+    background: #74ebd5;
+    background: linear-gradient(to right, #ACB6E5, #74ebd5);
+    }
+
+header{
+    display: contents;
+    align-items: center;
+}
+
+#clouds {
+	width: 10%;
+	/* z-index: -1; */
+	position: absolute;
+    top: 20px;
+    animation-name: floating;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: -1;
+}
+
+@keyframes floating{
+    0%  {left: 80px; top: 10px}
+   50%  {left: 900px; top: 10px}
+   100% {left: 80px; top: 10px}
+   }
+
+.switch {
+    width: 90px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    background-color: #4243394A;
+}
+
+.switch::after{
+    content: 'F';
+    position: absolute;
+    width: 45px;
+    height: 31px;
+    background-color: #F5F6F7;
+    top: 2px;
+    left: 2px; 
+    transition: all 0.3s;
+    text-align: center;
+    font-size: 27px;
+    border-radius: 10px;
+}
+
+.checkbox:checked + .switch::after{  
+    left : 44px;
+    content: "°C";
+    font-size: 27px;
+}
+
+.checkbox:checked + .switch {
+    background-color: #4243394A;
+}
+
+.checkbox {
+    display: none;
+}
+
+.container {
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 360px;
+}
+
+.boxContainer{
+    justify-content: space-between;
+}
+h1{
+   font-size: 60px;
+   text-align: center;
+}
+form, #myInput {
+    border: aliceblue 10px solid;
+    border-radius: 10px;
+    width: max-content;
+    display: inline-flex;
+    background-color: aliceblue;
+}
+button{
+    border-radius: 5px;
+}
+
+#time {
+    font-size: 20px;
+}
+.display{
+    width: 360px;
+    display: grid;
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+    grid-template: repeat(2, 1fr 1fr) / repeat(2, 1fr 1fr);
+    background-color: aliceblue; 
+    border-radius: 5px; 
+}
+
+.location {
+    grid-column-start: span 4;
+    text-align: left;
+    margin-left: 20px;
+}
+
+h3 {
+    margin: 0px;
+    letter-spacing: 5px;
+}
+
+.icon {
+    grid-area: 2 / 3 / span 2 / span 2;
+    margin: auto;
+    border-radius: 80px;
+    background-color: #7DC8FF5C;
+    width: 160px;
+    height: 160px;
+}
+
+.temp {
+    grid-column-start: span 2;
+    grid-row-start: span 2 ;
+    margin: auto;
+    font-size: 80px;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.humi,.wind,.pressure{
+    font-size: 20px;
+}
+.humi img, .wind img,.pressure img{
+    width: 30%;
+}
+.desc {
+    grid-area: 3 / 3 / 3 / span 2;
+    margin-top: 40px;
+}
