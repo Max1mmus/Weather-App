@@ -2,17 +2,33 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>Weather app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="weather.css">
+    <title>Weather app</title>
   </head>
   <body>
-    <div class="container">
+    <header>
       <h1>Weather app</h1>
+    </header>
+    <img id="clouds" src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/clouds.png">
+    <div class="container">
       <form>
         <input id="myInput" type="text" placeholder="Pick your city...">
         <button type="submit">Search</button>
       </form>
+        <input class="checkbox" id="toggle" type="checkbox">
+        <label class="switch" for="toggle"></label>
+    </div>
+    <div class="display">
+      <div class="location"><h3></h3><p id="time"></p></div>
+      <div><br><p id="country"></p></div>
+      <div class="temp"><p></p></div>
+      <div class="icon"><img class="w" src=""></div>
+      <div class="desc"><p></p></div>
+      <div class="humi"><img src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/humi.png"><p></p></div>
+      <div class="wind"><img src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/wind.png"><p></p></div>
+      <div class="pressure"><img src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/press.png"><p></p></div>
     </div>
     <script type="text/javascript" src="weather.js"></script>
   </body>
