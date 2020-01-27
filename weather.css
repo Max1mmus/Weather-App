@@ -24,7 +24,7 @@ header{
     0%  {left: 80px; top: 10px}
    50%  {left: 900px; top: 10px}
    100% {left: 80px; top: 10px}
-   }
+}
 
 .switch {
     width: 90px;
@@ -78,6 +78,7 @@ header{
 .boxContainer{
     justify-content: space-between;
 }
+
 h1{
    font-size: 60px;
    text-align: center;
@@ -105,6 +106,17 @@ button{
     grid-template: repeat(2, 1fr 1fr) / repeat(2, 1fr 1fr);
     background-color: aliceblue; 
     border-radius: 5px; 
+    animation-name: fadeIn;
+    animation-duration: 2s;
+}
+
+@keyframes fadeIn{
+	from{
+  	opacity: 0;
+  } 
+  to{
+    opacity: 1;
+  }
 }
 
 .location {
@@ -118,6 +130,7 @@ h3 {
     margin: 0px;
     letter-spacing: 5px;
 }
+
 #country {
     font-size: 20px;
     text-align: end;
@@ -144,6 +157,7 @@ h3 {
 .w{
     width: 90%;
 }
+
 p {
     margin-top: 0px;
     margin-bottom: 0px;
