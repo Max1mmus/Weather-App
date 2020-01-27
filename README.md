@@ -1,7 +1,6 @@
 # Weather-App
 
-Simple weather app.
-
+Simple weather app built from scratch.
 ## Made with:
  
  * Pure JavaScript
