@@ -49,25 +49,25 @@ function sendR (){
         conversion();
         switch(w.main){
             case "Clear":
-                icon.src = "https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/sun.png"
+                icon.src = "icons/sun.png"
             break;
             case "Clouds":
-                icon.src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/cloudy.png"
+                icon.src="icons/cloudy.png"
             break;
             case "Rain":
-                icon.src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/chancerain.png"
+                icon.src="icons/chancerain.png"
             break;
             case "Thunderstorm":
-                icon.src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/tstorms.png"
+                icon.src="icons/tstorms.png"
             break;
             case "Snow":
-                icon.src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/flurries.png"
+                icon.src="icons/flurries.png"
             break;
             case "Drizzle":
-                icon.src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/drizzle.png"
+                icon.src="icons/drizzle.png"
             break;
             case "Fog": case  "Mist" : case  "Haze": case "Smoke":
-                icon.src="https://raw.githubusercontent.com/Max1mmus/Weather-App/master/icons/fog.png"
+                icon.src="icons/fog.png"
             break;
         }
     })
