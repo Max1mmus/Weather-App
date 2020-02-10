@@ -1,44 +1,44 @@
-
-var icon = document.querySelector(".w");
-var temp = document.querySelector(".temp p");
-var desc = document.querySelector(".desc p");
-var timeDate = document.getElementById("time");
-var loc = document.querySelector(".location h3");
-var wind = document.querySelector(".wind p");
-var humi = document.querySelector(".humi p");
-var press = document.querySelector(".pressure p");
-var country = document.getElementById("country");
-var input = document.getElementById("myInput");
-var button = document.querySelector("button");
-var checkBox = document.querySelector(".checkbox");
-var disp = document.querySelector(".display");
+const icon = document.querySelector(".w"),
+    temp = document.querySelector(".temp p"),
+    desc = document.querySelector(".desc p"),
+    timeDate = document.getElementById("time"),
+    loc = document.querySelector(".location h3"),
+    wind = document.querySelector(".wind p"),
+    humi = document.querySelector(".humi p"),
+    press = document.querySelector(".pressure p"),
+    country = document.getElementById("country"),
+    input = document.getElementById("myInput"),
+    button = document.querySelector("button"),
+    checkBox = document.querySelector(".checkbox"),
+    disp = document.querySelector(".display");
 // ---Adding event listeners--- //
 button.addEventListener("click", submit);
 checkBox.addEventListener("change", conversion);
 
-function submit(ev){
+function submit(ev) {
     ev.preventDefault();
     getTime();
-    if (input.value != "") sendR(); input.value = "";
+    if (input.value != "") sendR();
+    input.value = "";
 }
 
-function sendR (){
-    var endPoint = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${api_key}`;
+function sendR() {
+    const endPoint = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${api_key}`;
     show();
     fetch(endPoint)
-        .then(function(response){
-            if (response.ok){
+        .then(function(response) {
+            if (response.ok) {
                 console.log(response);
                 return response.json();
             }
             hide();
-            if (response.status == 404){
+            if (response.status == 404) {
                 alert("City not found! \nPlease enter a valid name!");
             }
             throw new Error(response.statusText);
         })
-        .then(function(myJson){
-            var weath = myJson.weather[0];
+        .then(function(myJson) {
+            const weath = myJson.weather[0];
             currentTemp = myJson.main.temp;
             desc.innerHTML = weath.main;
             loc.innerHTML = myJson.name;
@@ -64,30 +64,30 @@ function sendR (){
         });
 }
 
-function setZero(x){
-    return (x < 10) ? (x = ('0' + x)) : x;
+function setZero(x) {
+    return (x < 10) ? (x = '0' + x) : x;
 }
 
-function getTime(){
-    var today = new Date();
-    var d   = today.getDate();
-    var m   = (today.getMonth() + 1);
-    var y   = today.getFullYear();
-    var h   = setZero(today.getHours());
-    var min = setZero(today.getMinutes());
+function getTime() {
+    const today = new Date(),
+        d = today.getDate(),
+        m = (today.getMonth() + 1),
+        y = today.getFullYear(),
+        h = setZero(today.getHours()),
+        min = setZero(today.getMinutes());
     timeDate.innerHTML = `Date: ${d}.${m}.${y}. <br> Time: ${h}:${min}`;
 }
 
-function show(){
+function show() {
     disp.style.display = "grid";
 }
 
-function hide(){
+function hide() {
     disp.style.display = "none";
 }
 
-function conversion(){
-    return checkBox.checked ? temp.innerHTML = Math.round((currentTemp - 273.15)*10)/10 + "°C" : temp.innerHTML = currentTemp + "K";
+function conversion() {
+    return checkBox.checked ? temp.innerHTML = Math.round((currentTemp - 273.15) * 10) / 10 + "°C" : temp.innerHTML = currentTemp + "K";
 }
 
 window.onload = hide();
