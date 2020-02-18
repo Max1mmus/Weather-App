@@ -8,7 +8,7 @@ Simple weather app built from scratch.
 2. run `npm run open` to start local serv. @ http://localhost:1234/
 
 ### Prerequisite 
-* Get your API key form ![OpenWeatherMap](http://openweathermap.org)
+* Get your API key form [OpenWeatherMap](http://openweathermap.org)
 * declare it in config.js file
 ## Made with:
  
